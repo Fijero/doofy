@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "133084152892",
+    "project_id": "doofy-a3715",
+    "storage_bucket": "doofy-a3715.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133084152892:android:04459b928ecf568dabef39",
+        "android_client_info": {
+          "package_name": "com.example.doofy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPcHcmt5-BRbe9BxEdE9Rd1zryeMxf9U4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
