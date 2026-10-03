@@ -8,7 +8,7 @@ import 'package:doofy/screens/scan_result_screen.dart';
 // ═══════════════════════════════════════════════════════════════
 
 class ManualInputScreen extends StatefulWidget {
-  const ManualInputScreen({super.key});
+  const ManualInputScreen({super.key, required initialText});
 
   @override
   State<ManualInputScreen> createState() => _ManualInputScreenState();

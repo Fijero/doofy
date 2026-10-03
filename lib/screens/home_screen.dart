@@ -1,3 +1,4 @@
+import 'package:doofy/screens/barcode_scan_screen.dart';
 import 'package:doofy/screens/camera_scan_screen.dart';
 import 'package:doofy/screens/manual_input_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -5,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:doofy/models/allergy_profile.dart';
 import 'package:doofy/components/app_colors.dart';
-
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -138,14 +138,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     iconColor: const Color(0xFF3B6D13),
                     title: 'Scan barcode',
                     subtitle: 'Point camera at product barcode',
-                    badge: 'Fastest',
+                    badge: 'Online',
                     badgeColor: const Color(0xFF185FA5),
                     badgeBg: const Color(0xFFE6F1FB),
                     onTap: () {
-                      // TODO: Navigator.push(context,
-                      //   MaterialPageRoute(builder: (_) =>
-                      //     BarcodeScanScreen()));
-                      _comingSoon('Barcode Scan');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const BarcodeScanScreen(),
+                        ),
+                      );
                     },
                   ),
 
@@ -165,7 +167,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => const ManualInputScreen(),
+                          builder: (_) =>
+                              const ManualInputScreen(initialText: ''),
                         ),
                       );
                     },
@@ -184,7 +187,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     badgeColor: const Color(0xFF3B6D13),
                     badgeBg: const Color(0xFFEAF3DE),
                     onTap: () {
-
                       //   MaterialPageRoute(builder: (_) =>
                       //     NigerianFoodsScreen()));
                       _comingSoon('Nigerian Foods');
@@ -202,9 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-
-
-// header 
+// header
 
 class _Header extends StatelessWidget {
   final String userName;
@@ -291,8 +291,6 @@ class _Header extends StatelessWidget {
     );
   }
 }
-
-
 
 //  active alergen card
 
@@ -492,7 +490,6 @@ class _LegendDot extends StatelessWidget {
   }
 }
 
-
 // section label
 class _SectionLabel extends StatelessWidget {
   final String text;
@@ -511,7 +508,6 @@ class _SectionLabel extends StatelessWidget {
     );
   }
 }
-
 
 // scan card
 class _ScanCard extends StatelessWidget {
@@ -617,4 +613,3 @@ class _ScanCard extends StatelessWidget {
     );
   }
 }
-
