@@ -75,6 +75,8 @@ class _BarcodeScanScreenState extends State<BarcodeScanScreen> {
 
       if (res.statusCode != 200) return null;
 
+      print(res.body);
+
       final data = jsonDecode(res.body) as Map<String, dynamic>;
       if (data['status'] != 1) return null;
 

@@ -8,14 +8,16 @@ import 'package:doofy/screens/scan_result_screen.dart';
 // ═══════════════════════════════════════════════════════════════
 
 class ManualInputScreen extends StatefulWidget {
-  const ManualInputScreen({super.key, required initialText});
+  final String? initialText;
+
+  const ManualInputScreen({super.key, this.initialText});
 
   @override
   State<ManualInputScreen> createState() => _ManualInputScreenState();
 }
 
 class _ManualInputScreenState extends State<ManualInputScreen> {
-  final _controller = TextEditingController();
+  late final TextEditingController _controller;
   final _service = AllergenDetectionService();
   bool _isAnalysing = false;
 
@@ -48,6 +50,12 @@ class _ManualInputScreenState extends State<ManualInputScreen> {
           'chilli pepper, garlic, onion powder, salt',
     },
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController(text: widget.initialText ?? '');
+  }
 
   @override
   void dispose() {
@@ -285,6 +293,7 @@ class _InputCard extends StatelessWidget {
               children: [
                 const Text(
                   'Ingredients',
+
                   style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w700,

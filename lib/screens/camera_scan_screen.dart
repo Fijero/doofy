@@ -44,16 +44,11 @@ class _CameraScanScreenState extends State<CameraScanScreen> {
       body: CameraPreview(controller!),
 
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.camera_alt),
         onPressed: captureImage,
+        child: const Icon(Icons.camera_alt),
       ),
     );
   }
-
-  // Future<void> captureImage() async {
-  //   final image = await controller!.takePicture();
-  //   print(image.path);
-  // }
 
   Future<void> captureImage() async {
     if (_busy) return;
@@ -76,6 +71,8 @@ class _CameraScanScreenState extends State<CameraScanScreen> {
         );
         return;
       }
+
+      print(result.text);
 
       Navigator.push(
         context,

@@ -1,6 +1,7 @@
 import 'package:doofy/screens/barcode_scan_screen.dart';
 import 'package:doofy/screens/camera_scan_screen.dart';
 import 'package:doofy/screens/manual_input_screen.dart';
+import 'package:doofy/screens/nigerian_foods_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -186,10 +187,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     badge: 'Offline',
                     badgeColor: const Color(0xFF3B6D13),
                     badgeBg: const Color(0xFFEAF3DE),
-                    onTap: () {
-                      //   MaterialPageRoute(builder: (_) =>
-                      //     NigerianFoodsScreen()));
-                      _comingSoon('Nigerian Foods');
+                   onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const NigerianFoodsScreen(),
+                        ),
+                      );
                     },
                   ),
 
