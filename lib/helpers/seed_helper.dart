@@ -5,15 +5,6 @@ class SeedHelper {
   static Future<void> seedAllergens() async {
     final box = Hive.box<AllergenModel>('allergens');
 
-    // Already seeded — skip
-    // if (box.isNotEmpty) {
-    //   print(
-    //     '✅ Allergen DB already seeded: '
-    //     '${box.length} items',
-    //   );
-    //   return;
-    // }
-
     await box.put(
       'fish',
       AllergenModel(
@@ -88,7 +79,7 @@ class SeedHelper {
           'monkey nuts',
           'mixed nuts',
           'peanut flour',
-          'suya'
+          'suya',
         ],
         nutrientsProvided: ['protein', 'healthy fats'],
       ),
@@ -253,6 +244,5 @@ class SeedHelper {
 
     print('✅ Seeded ${box.length} allergens to Hive');
 
-    print(box.values.toList());
   }
 }

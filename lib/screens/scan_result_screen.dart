@@ -1,3 +1,4 @@
+import 'package:doofy/screens/alternative_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:doofy/components/app_colors.dart';
 import 'package:doofy/services/allergen_detection_service.dart';
@@ -343,7 +344,10 @@ class _DetectedSection extends StatelessWidget {
               decoration: BoxDecoration(
                 color: bg,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: color.withOpacity(0.3), width: 0.5),
+                border: Border.all(
+                  color: color.withValues(alpha: 0.3),
+                  width: 0.5,
+                ),
               ),
               child: Row(
                 children: [
@@ -543,19 +547,11 @@ class _AlternativesButton extends StatelessWidget {
       height: 52,
       child: ElevatedButton.icon(
         onPressed: () {
-          // TODO: Navigate to AlternativesScreen
-          // Navigator.push(context,
-          //   MaterialPageRoute(builder: (_) =>
-          //     AlternativesScreen(result: result)));
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: const Text('Alternatives screen — coming soon'),
-              backgroundColor: AppColors.green,
-              behavior: SnackBarBehavior.floating,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              margin: const EdgeInsets.all(16),
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (ctx) {
+                return AlternativesScreen(result: result);
+              },
             ),
           );
         },
